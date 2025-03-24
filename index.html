@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mood Tracker</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      background-color: #f0f8ff;
+    }
+    h1 {
+      color: #333;
+    }
+    .mood-container {
+      display: flex;
+      gap: 10px;
+    }
+    .mood-button {
+      padding: 10px 20px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      font-size: 16px;
+    }
+    .happy {
+      background-color: #ffd700;
+    }
+    .neutral {
+      background-color: #87ceeb;
+    }
+    .sad {
+      background-color: #ff6347;
+    }
+    #selected-mood {
+      margin-top: 20px;
+      font-size: 18px;
+      color: #555;
+    }
+  </style>
+</head>
+<body>
+  <h1>Mood Tracker</h1>
+  <div class="mood-container">
+    <button class="mood-button happy" onclick="selectMood('Happy')">😊 Happy</button>
+    <button class="mood-button neutral" onclick="selectMood('Neutral')">😐 Neutral</button>
+    <button class="mood-button sad" onclick="selectMood('Sad')">😢 Sad</button>
+  </div>
+  <p id="selected-mood">Select your mood!</p>
+
+  <script>
+    function selectMood(mood) {
+      const moodDisplay = document.getElementById('selected-mood');
+      moodDisplay.textContent = `You are feeling ${mood} today!`;
+    }
+  </script>
+</body>
+</html>
